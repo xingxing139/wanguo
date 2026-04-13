@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香港万国贸易有限公司 | Global Supply Chain & Trading Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand-navy: #001529; --brand-gold: #B89655; --text-main: #2D3436; }
+        body { font-family: 'Montserrat', 'PingFang SC', sans-serif; color: var(--text-main); background: #fff; overflow-x: hidden; }
+        
+        #loader {
+            position: fixed; inset: 0; background: var(--brand-navy); z-index: 100;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+        .loader-bar { width: 200px; height: 1px; background: rgba(184, 150, 85, 0.2); position: relative; overflow: hidden; margin-top: 20px; }
+        .loader-progress { position: absolute; width: 0%; height: 100%; background: var(--brand-gold); transition: width 0.4s ease; }
+
+        .parallax-section { background-attachment: fixed; background-size: cover; background-position: center; }
+        .hero-title { font-family: 'Bodoni Moda', serif; line-height: 1.1; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -4px; left: 0; background: var(--brand-gold); transition: 0.4s; }
+        .nav-link:hover::after { width: 100%; }
+        
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--brand-gold); }
+        input:focus, textarea:focus { border-color: var(--brand-gold) !important; outline: none; }
+    </style>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="text-white tracking-[0.5em] text-sm animate-pulse">WAN GUO TRADING</div>
+        <div class="loader-bar"><div class="loader-progress" id="progress"></div></div>
+    </div>
+
+    <nav class="fixed w-full z-50 transition-all duration-500 py-6" id="main-nav">
+        <div class="max-w-[1400px] mx-auto px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 border-2 border-brand-gold flex items-center justify-center text-brand-gold font-bold text-xl">W</div>
+                <div class="text-white" id="nav-logo-text">
+                    <div class="font-bold tracking-wider leading-none">万国贸易</div>
+                    <div class="text-[9px] uppercase tracking-widest opacity-70">Wan Guo Trading HK</div>
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center space-x-12 text-white text-[11px] font-semibold tracking-[0.2em] uppercase">
+                <a href="#about" class="nav-link relative">关于品牌</a>
+                <a href="#solutions" class="nav-link relative">解决方案</a>
+                <a href="#network" class="nav-link relative">全球网络</a>
+                <a href="#contact" class="bg-brand-gold text-white px-6 py-3 hover:bg-white hover:text-brand-navy transition-all">开启合作</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <video autoplay muted loop class="w-full h-full object-cover scale-105 opacity-60">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-container-ship-at-sea-34442-large.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#001529] via-[#001529]/80 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-[1400px] mx-auto px-8 w-full">
+            <div class="max-w-4xl hero-content">
+                <h2 class="text-brand-gold tracking-[0.4em] text-sm font-bold mb-6">SINCE 2012 · ASIA HINGE</h2>
+                <h1 class="text-white hero-title text-6xl md:text-8xl mb-10">跨越国界<br><span class="italic">重塑</span>全球贸易</h1>
+                <p class="text-gray-300 text-lg md:text-xl max-w-xl font-light leading-relaxed mb-12">
+                    香港万国贸易有限公司，通过卓越的供应链整合能力与深厚的离岸金融背景，为全球领先企业提供确定性的跨境贸易支持。
+                </p>
+                <div class="flex items-center space-x-8">
+                    <button class="group flex items-center space-x-4 text-white">
+                        <span class="w-16 h-16 rounded-full border border-brand-gold flex items-center justify-center group-hover:bg-brand-gold transition-all">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168l4.77 2.83a.5.5 0 010 .864l-4.77 2.83a.5.5 0 01-.755-.432V7.6a.5.5 0 01.755-.432z"/></svg>
+                        </span>
+                        <span class="text-sm font-bold tracking-widest uppercase">了解品牌短片</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-32 bg-white">
+        <div class="max-w-[1200px] mx-auto px-8">
+            <div class="grid lg:grid-cols-2 gap-24 items-center">
+                <div class="relative" data-scroll>
+                    <div class="absolute -top-10 -left-10 text-[200px] font-bold text-gray-50 opacity-5 z-0">WAN</div>
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80" class="relative z-10 rounded-sm shadow-2xl">
+                    <div class="absolute -bottom-12 -right-12 bg-brand-gold p-10 text-white max-w-xs hidden md:block">
+                        <h4 class="text-2xl font-serif italic mb-4">为什么选择香港？</h4>
+                        <p class="text-sm opacity-90 leading-loose">凭借零关税政策与自由港优势，我们能将物流成本降低22%，资金流转速率提升35%。</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-brand-gold font-bold tracking-widest text-xs mb-6 uppercase">About Company</h3>
+                    <h2 class="text-5xl font-bold text-brand-navy mb-8 leading-tight">专业的韧性<br>来自对规则的深谙</h2>
+                    <p class="text-gray-500 leading-loose mb-10 text-lg">
+                        作为香港进出口商会的资深会员，万国贸易不仅处理货物的流动。我们更擅长在复杂的国际法规、汇率波动与地缘政治风险中，为客户开辟一条安全的通路。从大宗商品到精密仪器，我们让每一次交付都毫无悬念。
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between border-b pb-4">
+                            <span class="font-bold text-brand-navy uppercase text-sm tracking-widest">合规性风险管理</span>
+                            <span class="text-brand-gold font-serif">AEO标准</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b pb-4">
+                            <span class="font-bold text-brand-navy uppercase text-sm tracking-widest">多币种结算能力</span>
+                            <span class="text-brand-gold font-serif">24h 响应</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions" class="py-32 bg-gray-50">
+        <div class="max-w-[1400px] mx-auto px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20">
+                <div class="max-w-2xl">
+                    <h2 class="text-brand-navy text-5xl font-bold mb-6">全链路解决方案</h2>
+                    <p class="text-gray-500">我们深入行业垂直领域，提供从采购、金融到最后一公里物流的定制化服务。</p>
+                </div>
+                <div class="mt-8 md:mt-0">
+                    <span class="text-8xl font-serif italic text-gray-200">Solutions</span>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-1">
+                <div class="service-card bg-white p-12 transition-all duration-500 border-b-4 border-transparent">
+                    <h4 class="text-brand-gold text-xs font-bold tracking-[0.2em] mb-6 uppercase">Sector 01</h4>
+                    <h3 class="text-xl font-bold mb-6 text-brand-navy">大宗商品贸易</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-10">针对有色金属、能源及农产品的国际化采购，提供套期保值与稳定货源支持。</p>
+                    <a href="#" class="text-xs font-bold hover:text-brand-gold transition-colors underline underline-offset-8 uppercase">Explore</a>
+                </div>
+                <div class="service-card bg-white p-12 transition-all duration-500 border-b-4 border-transparent">
+                    <h4 class="text-brand-gold text-xs font-bold tracking-[0.2em] mb-6 uppercase">Sector 02</h4>
+                    <h3 class="text-xl font-bold mb-6 text-brand-navy">离岸金融结算</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-10">解决跨境资金往来难题，提供离岸账户托管、信用证开立及结汇方案。</p>
+                    <a href="#" class="text-xs font-bold hover:text-brand-gold transition-colors underline underline-offset-8 uppercase">Explore</a>
+                </div>
+                <div class="service-card bg-white p-12 transition-all duration-500 border-b-4 border-transparent">
+                    <h4 class="text-brand-gold text-xs font-bold tracking-[0.2em] mb-6 uppercase">Sector 03</h4>
+                    <h3 class="text-xl font-bold mb-6 text-brand-navy">精密设备进出口</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-10">专注于半导体设备、医疗器械的特殊通关流程及高标准温控物流。</p>
+                    <a href="#" class="text-xs font-bold hover:text-brand-gold transition-colors underline underline-offset-8 uppercase">Explore</a>
+                </div>
+                <div class="service-card bg-white p-12 transition-all duration-500 border-b-4 border-transparent">
+                    <h4 class="text-brand-gold text-xs font-bold tracking-[0.2em] mb-6 uppercase">Sector 04</h4>
+                    <h3 class="text-xl font-bold mb-6 text-brand-navy">奢侈品供应链</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-10">为高端零售商提供保税仓储、防伪追溯及全球全境快速配送方案。</p>
+                    <a href="#" class="text-xs font-bold hover:text-brand-gold transition-colors underline underline-offset-8 uppercase">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="network" class="py-32 bg-brand-navy text-white overflow-hidden relative">
+        <div class="absolute inset-0 opacity-10">
+            <svg viewBox="0 0 1000 500" class="w-full h-full"><path fill="currentColor" d="M150 200 Q 300 50 500 200 T 850 200" fill="none" stroke="white" stroke-width="0.5"/></svg>
+        </div>
+        <div class="max-w-[1200px] mx-auto px-8 relative z-10 text-center">
+            <h2 class="text-brand-gold tracking-widest font-bold mb-6">GLOBAL NETWORK</h2>
+            <h3 class="text-5xl font-bold mb-16">无论目的地多远，<br>我们的服务网络触手可及</h3>
+            <div class="grid md:grid-cols-3 gap-16">
+                <div>
+                    <h4 class="text-2xl font-serif italic mb-2">Asia Pacific</h4>
+                    <p class="text-gray-400 text-sm">以香港、新加坡为中心，辐射RCEP成员国，深度覆盖东南亚新兴市场。</p>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-serif italic mb-2">European Union</h4>
+                    <p class="text-gray-400 text-sm">在鹿特丹及汉堡设有中转联络处，确保中欧贸易物流的无缝对接。</p>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-serif italic mb-2">Americas</h4>
+                    <p class="text-gray-400 text-sm">深耕美洲农业与能源链路，提供符合当地FDA、EPA标准的准入咨询。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32">
+        <div class="max-w-[1400px] mx-auto px-8">
+            <div class="flex flex-col lg:flex-row shadow-2xl overflow-hidden rounded-sm">
+                <div class="lg:w-1/3 bg-brand-navy p-16 text-white">
+                    <h2 class="text-4xl font-bold mb-8 italic font-serif">Contact</h2>
+                    <p class="text-gray-400 text-sm mb-12">请提交您的业务需求，我们的资深贸易经理将在2小时内为您制定初步方案。</p>
+                    <div class="space-y-10">
+                        <div>
+                            <span class="text-[10px] text-brand-gold uppercase tracking-[0.3em] block mb-2">Office</span>
+                            <p class="text-sm font-light">Unit 1502, Miramar Tower, 132 Nathan Road, Tsim Sha Tsui, HK</p>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-brand-gold uppercase tracking-[0.3em] block mb-2">Business Email</span>
+                            <p class="text-sm font-light">director@wanguo-hk.com</p>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-brand-gold uppercase tracking-[0.3em] block mb-2">Hotline</span>
+                            <p class="text-2xl font-bold text-brand-gold">+852-2988-XXXX</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-2/3 bg-white p-16">
+                    <form class="grid md:grid-cols-2 gap-10">
+                        <div class="space-y-2 border-b-2 border-gray-100 pb-2">
+                            <label class="text-[10px] font-bold uppercase text-gray-400 tracking-widest">您的姓名 / Name</label>
+                            <input type="text" class="w-full bg-transparent p-0 border-none text-brand-navy">
+                        </div>
+                        <div class="space-y-2 border-b-2 border-gray-100 pb-2">
+                            <label class="text-[10px] font-bold uppercase text-gray-400 tracking-widest">企业邮箱 / Email</label>
+                            <input type="email" class="w-full bg-transparent p-0 border-none text-brand-navy">
+                        </div>
+                        <div class="md:col-span-2 space-y-2 border-b-2 border-gray-100 pb-2">
+                            <label class="text-[10px] font-bold uppercase text-gray-400 tracking-widest">业务需求类型 / Service Sector</label>
+                            <select class="w-full bg-transparent p-0 border-none text-brand-navy appearance-none">
+                                <option>进出口供应链方案</option>
+                                <option>大宗商品年度采购</option>
+                                <option>离岸金融与税务咨询</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2 space-y-2 border-b-2 border-gray-100 pb-2">
+                            <label class="text-[10px] font-bold uppercase text-gray-400 tracking-widest">具体描述 / Message</label>
+                            <textarea rows="3" class="w-full bg-transparent p-0 border-none text-brand-navy"></textarea>
+                        </div>
+                        <div class="md:col-span-2 pt-6">
+                            <button class="bg-brand-navy text-white px-12 py-5 font-bold tracking-widest hover:bg-brand-gold transition-all duration-300">提交正式申请</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-12 border-t border-gray-100">
+        <div class="max-w-[1400px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-[10px] tracking-widest">
+            <div class="mb-4 md:mb-0">
+                &copy; 2026 HONG KONG WAN GUO TRADING CO., LIMITED. ALL RIGHTS RESERVED.
+            </div>
+            <div class="flex space-x-12">
+                <a href="#" class="hover:text-brand-gold">PRIVACY POLICY</a>
+                <a href="#" class="hover:text-brand-gold">COMPLIANCE</a>
+                <a href="#" class="hover:text-brand-gold">HK TRADE REGISTRY</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 初始化 GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 加载动画
+        let progress = 0;
+        const progBar = document.getElementById('progress');
+        const interval = setInterval(() => {
+            progress += 10;
+            progBar.style.width = progress + '%';
+            if (progress >= 100) {
+                clearInterval(interval);
+                gsap.to("#loader", { opacity: 0, duration: 0.8, delay: 0.5, onComplete: () => {
+                    document.getElementById('loader').remove();
+                    initAnimations();
+                }});
+            }
+        }, 100);
+
+        function initAnimations() {
+            // 导航栏滚动效果
+            ScrollTrigger.create({
+                start: "top -100",
+                onEnter: () => {
+                    gsap.to("#main-nav", { backgroundColor: "rgba(0, 21, 41, 0.95)", backdropFilter: "blur(10px)", py: 4, duration: 0.4 });
+                },
+                onLeaveBack: () => {
+                    gsap.to("#main-nav", { backgroundColor: "transparent", backdropFilter: "blur(0px)", py: 6, duration: 0.4 });
+                }
+            });
+
+            // 英雄页内容进场
+            gsap.from(".hero-content > *", { y: 100, opacity: 0, duration: 1, stagger: 0.2, ease: "power4.out" });
+
+            // 通用滚动揭秘效果
+            gsap.utils.toArray('section').forEach(section => {
+                gsap.from(section.querySelectorAll('[data-scroll]'), {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 80%",
+                    },
+                    y: 50, opacity: 0, duration: 1, stagger: 0.3
+                });
+            });
+        }
+    </script>
+</body>
+</html>
